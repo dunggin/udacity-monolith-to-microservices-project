@@ -1,0 +1,20 @@
+Assuming the travis.yml file is in the project directory, and there is a separate sub-directory for each service
+# Use either docker-compose
+or individual docker build commands
+# Build
+- docker build -tudagram-api-feed./udegram-api-feed
+- docker build -tudagram-api-user-/degram-apl-user
+- docker build -tudagram-frontend./udagram-frontend
+- docker build -tudagram-reverseproxy•/udagram-reverseproxy
+# Tagging
+- docker tag udagram-api-feed dunggin/udaaram-api-feed:v1
+- docker tag ydagram-api-user dunggin/udagram-opi-user:v1
+- docker tag ydagram-frontend dunggin/udagram-frontend:.v1
+- docker tag udagram-reverseproxy dunggin/udagram-reverseproxy:v1
+# Push
+# Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
+- echo "DOCKER PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker push dunggin/udagram-api-feed:v1
+- docker push dunggin/udagram-api-user:v1
+- docker push dunggin/udagram-frontend:v1
+- docker push dunggin/udaaram-reverseproxy:v1
