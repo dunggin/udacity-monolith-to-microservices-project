@@ -1,0 +1,137 @@
+Name:              backend-api-feed
+Namespace:         default
+Labels:            service=backend-api-feed
+Annotations:       kubectl.kubernetes.io/last-applied-configuration:
+                     {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"service":"backend-api-feed"},"name":"backend-api-feed","namesp...
+Selector:          app=backend-feed
+Type:              ClusterIP
+IP:                10.100.108.163
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.41.201:8080,172.31.86.234:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              backend-api-user
+Namespace:         default
+Labels:            app=backend-api-user
+Annotations:       kubectl.kubernetes.io/last-applied-configuration:
+                     {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"backend-api-user"},"name":"backend-api-user","namespace"...
+Selector:          app=backend-user
+Type:              ClusterIP
+IP:                10.100.201.109
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.4.250:8080,172.31.5.27:8080,172.31.89.174:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              backend-feed
+Namespace:         default
+Labels:            service=backend-feed
+Annotations:       kubectl.kubernetes.io/last-applied-configuration:
+                     {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"service":"backend-feed"},"name":"backend-feed","namespace":"de...
+Selector:          app=backend-feed
+Type:              ClusterIP
+IP:                10.100.29.195
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.41.201:8080,172.31.86.234:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              backend-user
+Namespace:         default
+Labels:            app=backend-user
+Annotations:       kubectl.kubernetes.io/last-applied-configuration:
+                     {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"backend-user"},"name":"backend-user","namespace":"defaul...
+Selector:          app=backend-user
+Type:              ClusterIP
+IP:                10.100.168.138
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.4.250:8080,172.31.5.27:8080,172.31.89.174:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         172.31.41.44:443,172.31.87.156:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     publicfrontend
+Namespace:                default
+Labels:                   app=udagram-frontend
+Annotations:              <none>
+Selector:                 app=udagram-frontend
+Type:                     LoadBalancer
+IP:                       10.100.23.166
+LoadBalancer Ingress:     a6c5425fb1165417c8ba0d951a6d2d98-1202325871.us-east-1.elb.amazonaws.com
+Port:                     <unset>  80/TCP
+TargetPort:               80/TCP
+NodePort:                 <unset>  30606/TCP
+Endpoints:                172.31.33.242:80,172.31.7.226:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:                     publicreverse
+Namespace:                default
+Labels:                   app=udagram-reverseproxy
+Annotations:              <none>
+Selector:                 app=udagram-reverseproxy
+Type:                     LoadBalancer
+IP:                       10.100.171.252
+LoadBalancer Ingress:     a3cc08bdc03b14208b3f9dc086ff29ee-1679665705.us-east-1.elb.amazonaws.com
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  30912/TCP
+Endpoints:                172.31.41.157:8080,172.31.7.179:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              udagram-frontend
+Namespace:         default
+Labels:            service=udagram-frontend
+Annotations:       kubectl.kubernetes.io/last-applied-configuration:
+                     {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"service":"udagram-frontend"},"name":"udagram-frontend","namesp...
+Selector:          app=udagram-frontend
+Type:              ClusterIP
+IP:                10.100.248.20
+Port:              8100  8100/TCP
+TargetPort:        8100/TCP
+Endpoints:         172.31.33.242:8100,172.31.7.226:8100
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              udagram-reverseproxy
+Namespace:         default
+Labels:            service=udagram-reverseproxy
+Annotations:       kubectl.kubernetes.io/last-applied-configuration:
+                     {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"service":"udagram-reverseproxy"},"name":"udagram-reverseproxy"...
+Selector:          app=udagram-reverseproxy
+Type:              ClusterIP
+IP:                10.100.220.242
+Port:              udagram-reverseproxy  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.41.157:8080,172.31.7.179:8080
+Session Affinity:  None
+Events:            <none>
